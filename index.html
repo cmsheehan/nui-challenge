@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The HTML5 Herald</title>
+  <meta name=viewport content="content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="description" content="Tenable Network Security assessment for Colin Sheehan">
+  <meta name="author" content="Colin Sheehan">
+  <link rel="stylesheet" href="style/style.css">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <header>
+  	<h1>Nessus User Interface Challenge</h1>
+  </header>
+  <div class="content">
+    <!-- Jquery Response Content -->
+  	<div class="responseWrapper">
+  	  <div class="buttonWrapper">
+  		<button class="request" id="jquerybtn">Jquery Get</button>
+  	  </div>
+  	  <div class="response" id="jquerycontent"></div>
+  	</div>
+  	<!-- Angular Response Content -->
+  	<div class="responseWrapper" id="angular">
+  	  <div ng-app="NUI">
+    	<div ng-controller="GetCtrl">
+    	  <div class="buttonWrapper">
+  			<button class="request" ng-click="getData()">Angular Get</button>
+  		  </div>
+	  	  <div class="response" id="angularcontent">
+	  		<ul ng-repeat="config in configs">
+		      <li>{{config.name}}</li>
+		      <li>{{config.hostname}}</li>
+		      <li>{{config.port}}</li>
+		      <li>{{config.username}}</li>
+			 </ul>
+	  	  </div>
+		</div>
+  	  </div>
+  	</div>
+  </div>
+  <script src="thirdparty/jquery-3.1.1.min.js"></script>
+  <script src="thirdparty/angular.min.js"></script>
+  <script src="scripts/script.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
